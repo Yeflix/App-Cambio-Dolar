@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - Cambio Dólar BCV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2A6B97;
+            --secondary-color: #0F4C5C;
+            --accent-color: #00C896;
+            --dark-color: #121212;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg) translateX(0); }
+            100% { transform: rotate(360deg) translateX(0); }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .app-version {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        /* Main content */
+        .terms-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 2rem 0;
+        }
+
+        /* Sidebar navigation */
+        .sidebar {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 25px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .sidebar h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 10px;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            color: var(--dark-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(42, 107, 151, 0.1);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: var(--primary-color);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-links a:hover::before {
+            width: 4px;
+        }
+
+        .nav-links i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Terms content */
+        .terms-content {
+            flex: 2;
+            min-width: 300px;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .terms-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .terms-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.6rem;
+        }
+
+        .terms-text {
+            color: #444;
+        }
+
+        .terms-text p {
+            margin-bottom: 15px;
+        }
+
+        .terms-text ul, .terms-text ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .terms-text li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: rgba(0, 200, 150, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+        }
+
+        /* Acceptance section */
+        .acceptance-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            text-align: center;
+            margin: 2rem 0;
+            animation: fadeInUp 0.6s ease-out 0.6s both;
+        }
+
+        .acceptance-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .acceptance-box h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(42, 107, 151, 0.05);
+            border-radius: 10px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-container label {
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 180px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accept {
+            background: linear-gradient(135deg, var(--accent-color), #00A87E);
+            color: white;
+        }
+
+        .btn-accept:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 200, 150, 0.3);
+        }
+
+        .btn-decline {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-decline:hover {
+            background: rgba(42, 107, 151, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .terms-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Scroll progress indicator */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(42, 107, 151, 0.1);
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0, 200, 150, 0.3);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.active {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll progress indicator -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Cambio Dólar BCV</h1>
+                        <p>Términos y Condiciones de Uso</p>
+                    </div>
+                </div>
+                <div class="app-version">
+                    <i class="fas fa-info-circle"></i> Versión 1.3.0
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="terms-container">
+            <!-- Sidebar navigation -->
+            <nav class="sidebar">
+                <h2><i class="fas fa-list-ul"></i> Contenido</h2>
+                <ul class="nav-links">
+                    <li><a href="#section1" class="active"><i class="fas fa-file-contract"></i> 1. Aceptación de Términos</a></li>
+                    <li><a href="#section2"><i class="fas fa-info-circle"></i> 2. Descripción del Servicio</a></li>
+                    <li><a href="#section3"><i class="fas fa-user-check"></i> 3. Uso Responsable</a></li>
+                    <li><a href="#section4"><i class="fas fa-shield-alt"></i> 4. Privacidad y Datos</a></li>
+                    <li><a href="#section5"><i class="fas fa-ban"></i> 5. Limitaciones de Responsabilidad</a></li>
+                    <li><a href="#section6"><i class="fas fa-gavel"></i> 6. Propiedad Intelectual</a></li>
+                    <li><a href="#section7"><i class="fas fa-exchange-alt"></i> 7. Modificaciones</a></li>
+                    <li><a href="#section8"><i class="fas fa-balance-scale"></i> 8. Legislación Aplicable</a></li>
+                </ul>
+                
+                <div class="highlight" style="margin-top: 30px;">
+                    <p><i class="fas fa-clock"></i> <strong>Última actualización:</strong> 14 de enero, 2026</p>
+                    <p><i class="fas fa-eye"></i> <strong>Tiempo de lectura:</strong> 8-10 minutos</p>
+                </div>
+            </nav>
+
+            <!-- Terms content -->
+            <main class="terms-content">
+                <!-- Section 1 -->
+                <section id="section1" class="terms-section active">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h2>1. Aceptación de Términos</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>Al descargar, instalar o utilizar la aplicación <strong>"Cambio Dólar BCV"</strong>, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones de uso. Si no está de acuerdo con estos términos, no debe utilizar esta aplicación.</p>
+                        
+                        <p>La aplicación está desarrollada y mantenida por <strong>YefriDev</strong> y tiene como propósito principal proporcionar información sobre las tasas de cambio de monedas extranjeras (Dólar, Euro y USDT) en Venezuela, obtenidas de fuentes públicas como el Banco Central de Venezuela (BCV) y la plataforma Binance P2P.</p>
+                        
+                        <div class="highlight">
+                            <p><i class="fas fa-exclamation-triangle"></i> <strong>Importante:</strong> Los precios mostrados en la aplicación son informativos y pueden no reflejar el valor exacto en tiempo real debido a fluctuaciones del mercado, retrasos en la actualización o errores técnicos.</p>
+                        </div>
+                        
+                        <p>El uso continuado de la aplicación después de cualquier modificación de estos términos constituye la aceptación de dichos cambios. Se recomienda revisar periódicamente estos términos para estar informado de cualquier actualización.</p>
+                    </div>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="section2" class="terms-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h2>2. Descripción del Servicio</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>La aplicación <strong>"Cambio Dólar BCV"</strong> proporciona las siguientes funcionalidades:</p>
+                        
+                        <ul>
+                            <li><strong>Monitoreo de tasas de cambio:</strong> Consulta de precios del Dólar y Euro según el Banco Central de Venezuela (BCV), y del USDT según la plataforma Binance P2P.</li>
+                            <li><strong>Calculadora de conversión:</strong> Herramienta para convertir entre diferentes monedas y bolívares.</li>
+                            <li><strong>Notificaciones automáticas:</strong> Alertas sobre cambios en las tasas de cambio (configurable por el usuario).</li>
+                            <li><strong>Historial de precios:</strong> Registro de las fluctuaciones de precios a lo largo del tiempo.</li>
+                            <li><strong>Widget para pantalla de inicio:</strong> Acceso rápido a las tasas actuales desde la pantalla principal del dispositivo.</li>
+                            <li><strong>Modo oscuro/claro:</strong> Personalización de la interfaz según preferencias del usuario.</li>
+                        </ul>
+                        
+                        <p>La aplicación es <strong>gratuita</strong> y no contiene anuncios. Su desarrollo y mantenimiento son financiados únicamente por donaciones voluntarias de usuarios.</p>
+                        
+                        <p><strong>Limitaciones del servicio:</strong></p>
+                        <ol>
+                            <li>La aplicación depende de la disponibilidad de las fuentes de datos (sitio web del BCV y Binance).</li>
+                            <li>En caso de mantenimiento o problemas técnicos en las fuentes, la aplicación mostrará la última información disponible almacenada en caché.</li>
+                            <li>La aplicación no realiza transacciones financieras ni intermediaciones de ningún tipo.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="section3" class="terms-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h2>3. Uso Responsable</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>Al utilizar esta aplicación, usted se compromete a:</p>
+                        
+                        <ul>
+                            <li>Utilizar la información proporcionada únicamente como referencia y no como asesoramiento financiero oficial.</li>
+                            <li>Verificar los precios con otras fuentes antes de realizar cualquier transacción financiera importante.</li>
+                            <li>No utilizar la aplicación para actividades ilegales o fraudulentas.</li>
+                            <li>No intentar manipular, hackear o interferir con el funcionamiento normal de la aplicación.</li>
+                            <li>No redistribuir, modificar o revender la aplicación sin autorización expresa del desarrollador.</li>
+                        </ul>
+                        
+                        <div class="highlight">
+                            <p><i class="fas fa-exclamation-triangle"></i> <strong>Advertencia sobre USDT:</strong> El precio del USDT mostrado en la aplicación corresponde al mercado P2P de Binance y <strong>NO es el tipo de cambio oficial del BCV</strong>. Es un precio informativo basado en la oferta y demanda en plataformas de intercambio.</p>
+                        </div>
+                        
+                        <p>El desarrollador no se hace responsable por decisiones financieras tomadas en base a la información proporcionada por la aplicación. Los usuarios deben ejercer su propio criterio y consultar con profesionales financieros calificados cuando sea necesario.</p>
+                    </div>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="section4" class="terms-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2>4. Privacidad y Datos</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>La aplicación <strong>"Cambio Dólar BCV"</strong> respeta su privacidad y se compromete a proteger sus datos personales.</p>
+                        
+                        <p><strong>Datos recopilados:</strong></p>
+                        <ul>
+                            <li><strong>Configuraciones de la aplicación:</strong> Preferencias como tema oscuro/claro, intervalo de notificaciones, tipo de notificación.</li>
+                            <li><strong>Historial de tasas:</strong> Información sobre precios anteriores almacenada localmente en su dispositivo.</li>
+                            <li><strong>Datos de uso anónimos:</strong> Información agregada y anónima para mejorar la aplicación (errores, frecuencia de uso, etc.).</li>
+                        </ul>
+                        
+                        <p><strong>Datos NO recopilados:</strong></p>
+                        <ul>
+                            <li>Información personal identificable (nombre, correo electrónico, teléfono).</li>
+                            <li>Datos financieros (números de cuenta, tarjetas de crédito).</li>
+                            <li>Ubicación precisa del dispositivo.</li>
+                            <li>Lista de contactos o información de otras aplicaciones.</li>
+                        </ul>
+                        
+                        <p><strong>Almacenamiento de datos:</strong> Todos los datos se almacenan localmente en su dispositivo utilizando <strong>SharedPreferences</strong> y solo se transmiten para:
+                            <ol>
+                                <li>Obtener los precios actualizados desde el BCV y Binance.</li>
+                                <li>Enviar notificaciones push (si el usuario las habilita).</li>
+                                <li>Reportar errores anónimos para mejorar la aplicación.</li>
+                            </ol>
+                        </p>
+                        
+                        <p><strong>Permisos de la aplicación:</strong></p>
+                        <ul>
+                            <li><strong>Internet:</strong> Para obtener precios actualizados.</li>
+                            <li><strong>Notificaciones:</strong> Para enviar alertas sobre cambios en las tasas (opcional).</li>
+                            <li><strong>Widget:</strong> Para mostrar información en la pantalla de inicio.</li>
+                        </ul>
+                        
+                        <p>La aplicación no vende, alquila ni comparte sus datos con terceros. Cualquier cambio en esta política de privacidad será comunicado mediante una actualización de la aplicación.</p>
+                    </div>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="section5" class="terms-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h2>5. Limitaciones de Responsabilidad</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>El desarrollador de <strong>"Cambio Dólar BCV"</strong> (YefriDev) proporciona la aplicación "tal cual" y no ofrece garantías de ningún tipo, ya sean expresas o implícitas, sobre la integridad, precisión, confiabilidad, idoneidad o disponibilidad de la aplicación o la información contenida en ella.</p>
+                        
+                        <p><strong>En ningún caso el desarrollador será responsable por:</strong></p>
+                        <ol>
+                            <li>Pérdidas financieras o daños indirectos resultantes del uso o la imposibilidad de usar la aplicación.</li>
+                            <li>Inconsistencias o errores en los precios mostrados, ya que estos dependen de fuentes externas.</li>
+                            <li>Interrupciones en el servicio debido a mantenimiento, fallas técnicas o indisponibilidad de las fuentes de datos.</li>
+                            <li>Decisiones tomadas en base a la información proporcionada por la aplicación.</li>
+                            <li>Problemas de seguridad derivados del uso de versiones modificadas de la aplicación.</li>
+                        </ol>
+                        
+                        <div class="highlight">
+                            <p><i class="fas fa-exclamation-triangle"></i> <strong>Declaración importante:</strong> Esta aplicación no está afiliada, respaldada ni avalada por el Banco Central de Venezuela (BCV) ni por Binance. Los nombres y logotipos son marcas registradas de sus respectivos propietarios.</p>
+                        </div>
+                        
+                        <p>El usuario acepta que el uso de la aplicación es bajo su propio riesgo y que es responsable de verificar la información con fuentes oficiales antes de tomar decisiones financieras.</p>
+                    </div>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="section6" class="terms-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h2>6. Propiedad Intelectual</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>Todos los derechos de propiedad intelectual relacionados con la aplicación <strong>"Cambio Dólar BCV"</strong>, incluyendo pero no limitado al código fuente, diseño, logotipos, gráficos e interfaz de usuario, son propiedad exclusiva de <strong>YefriDev</strong>, salvo donde se indique lo contrario.</p>
+                        
+                        <p><strong>Se otorga al usuario una licencia limitada, no exclusiva, intransferible y revocable para:</strong></p>
+                        <ul>
+                            <li>Descargar, instalar y usar la aplicación en dispositivos personales.</li>
+                            <li>Utilizar las funcionalidades de la aplicación según lo previsto en estos términos.</li>
+                        </ul>
+                        
+                        <p><strong>Queda expresamente prohibido:</strong></p>
+                        <ol>
+                            <li>Modificar, descompilar, realizar ingeniería inversa o desensamblar cualquier parte de la aplicación.</li>
+                            <li>Crear trabajos derivados basados en la aplicación.</li>
+                            <li>Distribuir, sublicenciar, alquilar o vender la aplicación.</li>
+                            <li>Utilizar la aplicación para fines comerciales sin autorización expresa.</li>
+                            <li>Eliminar o alterar cualquier aviso de derechos de autor, marca registrada u otra notificación de propiedad.</li>
+                        </ol>
+                        
+                        <p>Las marcas "BCV", "Binance", "USDT" y otras mencionadas en la aplicación son propiedad de sus respectivos dueños y se utilizan únicamente con fines informativos y de identificación.</p>
+                    </div>
+                </section>
+
+                <!-- Section 7 -->
+                <section id="section7" class="terms-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h2>7. Modificaciones</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>El desarrollador se reserva el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en la aplicación o en el sitio web correspondiente.</p>
+                        
+                        <p><strong>Notificación de cambios:</strong> Para cambios sustanciales en los términos, se hará un esfuerzo razonable para notificar a los usuarios mediante:</p>
+                        <ul>
+                            <li>Notificación dentro de la aplicación.</li>
+                            <li>Actualización de la versión en las tiendas de aplicaciones.</li>
+                            <li>Comunicación por correo electrónico (si el usuario ha proporcionado su contacto para soporte).</li>
+                        </ul>
+                        
+                        <p>El uso continuado de la aplicación después de la implementación de cambios constituye la aceptación de los nuevos términos. Si no está de acuerdo con los cambios, debe dejar de utilizar la aplicación y desinstalarla.</p>
+                        
+                        <p><strong>Modificaciones al servicio:</strong> El desarrollador también se reserva el derecho de:</p>
+                        <ol>
+                            <li>Agregar, modificar o eliminar funcionalidades de la aplicación.</li>
+                            <li>Interrumpir temporal o permanentemente el servicio (o parte de él) por mantenimiento, actualizaciones o razones técnicas.</li>
+                            <li>Establecer límites de uso o requerir suscripciones para funciones avanzadas (en versiones futuras, con notificación previa).</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Section 8 -->
+                <section id="section8" class="terms-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h2>8. Legislación Aplicable</h2>
+                    </div>
+                    <div class="terms-text">
+                        <p>Estos términos y condiciones se rigen e interpretan de acuerdo con las leyes de la República Bolivariana de Venezuela, sin tener en cuenta sus disposiciones sobre conflicto de leyes.</p>
+                        
+                        <p>Cualquier disputa que surja en relación con estos términos o el uso de la aplicación se resolverá mediante negociación amistosa entre las partes. Si no se puede llegar a un acuerdo, la disputa se someterá a los tribunales competentes de Caracas, Venezuela.</p>
+                        
+                        <p><strong>Separabilidad:</strong> Si cualquier disposición de estos términos se considera inválida o inaplicable por un tribunal competente, dicha disposición se interpretará de manera consistente con la ley aplicable para reflejar la intención original, y las disposiciones restantes continuarán en pleno vigor y efecto.</p>
+                        
+                        <p><strong>Renuncia:</strong> El hecho de que el desarrollador no ejerza o haga valer cualquier derecho o disposición de estos términos no constituirá una renuncia a dicho derecho o disposición.</p>
+                        
+                        <div class="highlight">
+                            <p><i class="fas fa-headset"></i> <strong>Soporte y contacto:</strong> Para preguntas, dudas o aclaratorias sobre estos términos, puede contactar al desarrollador a través de: <strong>Yefiiix@gmail.com</strong></p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Acceptance section -->
+                <div class="acceptance-section">
+                    <div class="acceptance-box">
+                        <h2><i class="fas fa-check-circle"></i> Aceptación de Términos</h2>
+                        <p>Para continuar utilizando la aplicación "Cambio Dólar BCV", debe aceptar los términos y condiciones establecidos anteriormente.</p>
+                        
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="acceptTerms">
+                            <label for="acceptTerms">He leído, comprendo y acepto los términos y condiciones de uso de la aplicación "Cambio Dólar BCV"</label>
+                        </div>
+                        
+                        <div class="buttons">
+                            <button class="btn btn-accept" id="acceptBtn">
+                                <i class="fas fa-check"></i> Aceptar Términos
+                            </button>
+                            <button class="btn btn-decline" id="declineBtn">
+                                <i class="fas fa-times"></i> No Aceptar
+                            </button>
+                        </div>
+                        
+                        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--gray-color);">
+                            <i class="fas fa-info-circle"></i> Al hacer clic en "Aceptar Términos", confirma que ha leído y aceptado todos los términos anteriores.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cambio Dólar BCV</h3>
+                    <p>La aplicación más confiable para monitorear las tasas de cambio en Venezuela. Totalmente gratuita y sin anuncios.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#section1"><i class="fas fa-chevron-right"></i> Aceptación de Términos</a></li>
+                        <li><a href="#section4"><i class="fas fa-chevron-right"></i> Política de Privacidad</a></li>
+                        <li><a href="#section5"><i class="fas fa-chevron-right"></i> Limitaciones</a></li>
+                        <li><a href="#section8"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Información de Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> Yefiiix@gmail.com</li>
+                        <li><i class="fas fa-code"></i> Desarrollado por YefriDev</li>
+                        <li><i class="fas fa-calendar-alt"></i> © 2026 Cambio Dolar BCV</li>
+                        <li><i class="fas fa-mobile-alt"></i> Versión 1.3.0</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 Cambio Dolar BCV. Todos los derechos reservados. Los precios mostrados son informativos y pueden no reflejar valores exactos en tiempo real.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Términos aceptados correctamente</span>
+    </div>
+
+    <script>
+        // DOM Elements
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const termsSections = document.querySelectorAll('.terms-section');
+        const acceptBtn = document.getElementById('acceptBtn');
+        const declineBtn = document.getElementById('declineBtn');
+        const acceptCheckbox = document.getElementById('acceptTerms');
+        const scrollTopBtn = document.getElementById('scrollTop');
+        const progressBar = document.getElementById('progressBar');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate sections on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        
+                        // Update active nav link
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            termsSections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Smooth scrolling for nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Accept button functionality
+            acceptBtn.addEventListener('click', function() {
+                if (acceptCheckbox.checked) {
+                    // Show success toast
+                    showToast('¡Términos aceptados correctamente!', 'success');
+                    
+                    // Animate button
+                    this.style.animation = 'pulse 0.5s ease';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 500);
+                    
+                    // In a real app, you would save this acceptance
+                    console.log('User accepted terms and conditions');
+                    
+                    // Simulate redirect after acceptance
+                    setTimeout(() => {
+                        // window.location.href = 'app://home'; // For deep linking in Flutter
+                        showToast('Redirigiendo a la aplicación...', 'info');
+                    }, 1500);
+                } else {
+                    showToast('Debe marcar la casilla de aceptación', 'error');
+                    acceptCheckbox.focus();
+                }
+            });
+
+            // Decline button functionality
+            declineBtn.addEventListener('click', function() {
+                showToast('No puede utilizar la aplicación sin aceptar los términos', 'error');
+                
+                // In a real app, you might redirect to app store or close the app
+                // window.location.href = 'https://play.google.com/store'; // Example redirect
+            });
+
+            // Scroll progress indicator
+            window.addEventListener('scroll', updateProgressBar);
+
+            // Scroll to top button
+            window.addEventListener('scroll', toggleScrollTopButton);
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update scroll progress bar
+        function updateProgressBar() {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            progressBar.style.width = `${scrolled}%`;
+        }
+
+        // Toggle scroll to top button
+        function toggleScrollTopButton() {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'info') {
+            // Set message and type
+            toastMessage.textContent = message;
+            
+            // Set color based on type
+            if (type === 'success') {
+                toast.style.background = 'linear-gradient(135deg, #00C896, #00A87E)';
+            } else if (type === 'error') {
+                toast.style.background = 'linear-gradient(135deg, #FF6B6B, #EE5A52)';
+            } else {
+                toast.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
+            }
+            
+            // Show toast
+            toast.classList.add('active');
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3000);
+        }
+
+        // Add some interactive effects to section headers
+        const sectionHeaders = document.querySelectorAll('.section-header');
+        sectionHeaders.forEach(header => {
+            header.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            header.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Add animation to acceptance checkbox when clicked
+        acceptCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                this.parentElement.style.background = 'rgba(0, 200, 150, 0.1)';
+                this.parentElement.style.border = '1px solid var(--accent-color)';
+            } else {
+                this.parentElement.style.background = 'rgba(42, 107, 151, 0.05)';
+                this.parentElement.style.border = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
