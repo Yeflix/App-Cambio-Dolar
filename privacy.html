@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad | DolarGO</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --primary-color: #0056b3;
+            --border-color: #dddddd;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --primary-color: #4da3ff;
+            --border-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--primary-color);
+            color: var(--card-bg);
+        }
+
+        .last-updated {
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos del Acordeón */
+        .accordion {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion:hover {
+            background-color: var(--bg-color);
+        }
+
+        .accordion:after {
+            content: '\002B'; /* Símbolo + */
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .active:after {
+            content: "\2212"; /* Símbolo - */
+        }
+
+        .panel {
+            padding: 0 15px;
+            background-color: var(--card-bg);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid transparent;
+        }
+
+        .panel.show {
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 0 0 5px 5px;
+            margin-bottom: 10px;
+        }
+
+        .panel p, .panel ul {
+            margin: 15px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Política de Privacidad | DolarGO</h1>
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">Modo Oscuro</button>
+        </header>
+
+        <p class="last-updated"><strong>Última actualización:</strong> <span id="currentDate"></span></p>
+
+        <p><strong>CIDDRAS</strong> ("nosotros", "nuestro" o "la Compañía") opera la aplicación móvil <strong>DolarGO</strong>. Esta página le informa sobre nuestras políticas con respecto a la recopilación, el uso y la divulgación de datos personales cuando utiliza nuestro Servicio.</p>
+
+        <button class="accordion">1. Recopilación y uso de información</button>
+        <div class="panel">
+            <p>Para una mejor experiencia al utilizar nuestro Servicio, es posible que le pidamos que nos proporcione cierta información de identificación personal. La información que solicitemos se mantendrá en su dispositivo y nosotros no la recopilaremos de ninguna manera.</p>
+        </div>
+
+        <button class="accordion">2. Datos de registro (Log Data)</button>
+        <div class="panel">
+            <p>Queremos informarle que cada vez que utiliza nuestro Servicio, en caso de un error en la aplicación, recopilamos datos e información en su teléfono llamados Datos de registro. Estos pueden incluir información como la dirección de protocolo de Internet (“IP”) de su dispositivo, el nombre del dispositivo, la versión del sistema operativo, la configuración de la aplicación y la hora/fecha de su uso.</p>
+        </div>
+
+        <button class="accordion">3. Cookies</button>
+        <div class="panel">
+            <p>Las cookies son archivos con una pequeña cantidad de datos que se utilizan comúnmente como identificadores únicos anónimos. Nuestra aplicación no utiliza estas “cookies” de forma explícita. Sin embargo, la aplicación puede utilizar código de terceros y bibliotecas que utilizan “cookies” para recopilar información y mejorar sus servicios.</p>
+        </div>
+
+        <button class="accordion">4. Proveedores de servicios y Terceros</button>
+        <div class="panel">
+            <p>Podemos emplear a terceras empresas e individuos por las siguientes razones:</p>
+            <ul>
+                <li>Para facilitar nuestro Servicio.</li>
+                <li>Para prestar el Servicio en nuestro nombre.</li>
+                <li>Para analizar cómo se utiliza nuestro Servicio.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">5. Seguridad de los Datos</button>
+        <div class="panel">
+            <p>Valoramos su confianza al proporcionarnos su información personal, por lo que nos esforzamos por utilizar medios comercialmente aceptables para protegerla. Pero recuerde que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro y confiable.</p>
+        </div>
+
+        <button class="accordion">6. Enlaces a otros sitios</button>
+        <div class="panel">
+            <p>Este Servicio puede contener enlaces a otros sitios (como indicadores de entes oficiales). Si hace clic en un enlace de un tercero, será dirigido a ese sitio. Tenga en cuenta que estos sitios externos no son operados por nosotros y no asumimos responsabilidad sobre su contenido o políticas.</p>
+        </div>
+
+        <button class="accordion">7. Contacto</button>
+        <div class="panel">
+            <p>Si tiene alguna pregunta o sugerencia sobre nuestra Política de Privacidad, no dude en contactarnos a través de los canales proporcionados en la ficha de desarrollador de Google Play.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Lógica para establecer la fecha actual automáticamente
+        const dateElement = document.getElementById('currentDate');
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = new Date().toLocaleDateString('es-ES', options);
+
+        // Lógica para el modo oscuro/claro
+        function toggleTheme() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('themeToggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                toggleBtn.textContent = 'Modo Oscuro';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                toggleBtn.textContent = 'Modo Claro';
+            }
+        }
+
+        // Lógica para el Acordeón
+        const accordions = document.getElementsByClassName("accordion");
+        
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    panel.classList.remove("show");
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    panel.classList.add("show");
+                } 
+            });
+        }
+    </script>
+</body>
+</html>
