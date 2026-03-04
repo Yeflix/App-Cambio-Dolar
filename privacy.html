@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad | DolarGO</title>
+    <title>Privacy Policy | DolarGO</title>
     <style>
         :root {
             --bg-color: #f4f7f6;
@@ -48,6 +48,8 @@
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 10px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         h1 {
@@ -56,7 +58,12 @@
             color: var(--primary-color);
         }
 
-        .theme-toggle {
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
             background: none;
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
@@ -64,10 +71,11 @@
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 0.9rem;
             transition: all 0.3s;
         }
 
-        .theme-toggle:hover {
+        .btn:hover {
             background-color: var(--primary-color);
             color: var(--card-bg);
         }
@@ -103,14 +111,14 @@
         }
 
         .accordion:after {
-            content: '\002B'; /* Símbolo + */
+            content: '\002B';
             font-size: 1.5rem;
             color: var(--primary-color);
             font-weight: bold;
         }
 
         .active:after {
-            content: "\2212"; /* Símbolo - */
+            content: "\2212";
         }
 
         .panel {
@@ -133,91 +141,157 @@
         .panel p, .panel ul {
             margin: 15px 0;
         }
-
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <h1>Política de Privacidad | DolarGO</h1>
-            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">Modo Oscuro</button>
+            <h1 id="pageTitle">Privacy Policy | DolarGO</h1>
+            <div class="controls">
+                <button class="btn" id="langToggle" onclick="toggleLanguage()">ESPAÑOL</button>
+                <button class="btn" id="themeToggle" onclick="toggleTheme()">Dark Mode</button>
+            </div>
         </header>
 
-        <p class="last-updated"><strong>Última actualización:</strong> <span id="currentDate"></span></p>
+        <p class="last-updated"><strong id="lastUpdatedTitle">Last updated:</strong> <span id="currentDate"></span></p>
 
-        <p><strong>CIDDRAS</strong> ("nosotros", "nuestro" o "la Compañía") opera la aplicación móvil <strong>DolarGO</strong>. Esta página le informa sobre nuestras políticas con respecto a la recopilación, el uso y la divulgación de datos personales cuando utiliza nuestro Servicio.</p>
+        <p id="introText"><strong>CIDDRAS</strong> ("us", "we", or "our") operates the <strong>DolarGO</strong> mobile application. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service.</p>
 
-        <button class="accordion">1. Recopilación y uso de información</button>
-        <div class="panel">
-            <p>Para una mejor experiencia al utilizar nuestro Servicio, es posible que le pidamos que nos proporcione cierta información de identificación personal. La información que solicitemos se mantendrá en su dispositivo y nosotros no la recopilaremos de ninguna manera.</p>
-        </div>
+        <button class="accordion" id="acc1Btn">1. Information Collection and Use</button>
+        <div class="panel"><p id="acc1Txt">For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.</p></div>
 
-        <button class="accordion">2. Datos de registro (Log Data)</button>
-        <div class="panel">
-            <p>Queremos informarle que cada vez que utiliza nuestro Servicio, en caso de un error en la aplicación, recopilamos datos e información en su teléfono llamados Datos de registro. Estos pueden incluir información como la dirección de protocolo de Internet (“IP”) de su dispositivo, el nombre del dispositivo, la versión del sistema operativo, la configuración de la aplicación y la hora/fecha de su uso.</p>
-        </div>
+        <button class="accordion" id="acc2Btn">2. Log Data</button>
+        <div class="panel"><p id="acc2Txt">We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p></div>
 
-        <button class="accordion">3. Cookies</button>
-        <div class="panel">
-            <p>Las cookies son archivos con una pequeña cantidad de datos que se utilizan comúnmente como identificadores únicos anónimos. Nuestra aplicación no utiliza estas “cookies” de forma explícita. Sin embargo, la aplicación puede utilizar código de terceros y bibliotecas que utilizan “cookies” para recopilar información y mejorar sus servicios.</p>
-        </div>
+        <button class="accordion" id="acc3Btn">3. Cookies</button>
+        <div class="panel"><p id="acc3Txt">Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. Our app does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.</p></div>
 
-        <button class="accordion">4. Proveedores de servicios y Terceros</button>
-        <div class="panel">
-            <p>Podemos emplear a terceras empresas e individuos por las siguientes razones:</p>
-            <ul>
-                <li>Para facilitar nuestro Servicio.</li>
-                <li>Para prestar el Servicio en nuestro nombre.</li>
-                <li>Para analizar cómo se utiliza nuestro Servicio.</li>
-            </ul>
-        </div>
+        <button class="accordion" id="acc4Btn">4. Service Providers</button>
+        <div class="panel"><p id="acc4Txt">We may employ third-party companies and individuals due to the following reasons: <br><br> • To facilitate our Service.<br> • To provide the Service on our behalf.<br> • To analyze how our Service is used.</p></div>
 
-        <button class="accordion">5. Seguridad de los Datos</button>
-        <div class="panel">
-            <p>Valoramos su confianza al proporcionarnos su información personal, por lo que nos esforzamos por utilizar medios comercialmente aceptables para protegerla. Pero recuerde que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro y confiable.</p>
-        </div>
+        <button class="accordion" id="acc5Btn">5. Security</button>
+        <div class="panel"><p id="acc5Txt">We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable.</p></div>
 
-        <button class="accordion">6. Enlaces a otros sitios</button>
-        <div class="panel">
-            <p>Este Servicio puede contener enlaces a otros sitios (como indicadores de entes oficiales). Si hace clic en un enlace de un tercero, será dirigido a ese sitio. Tenga en cuenta que estos sitios externos no son operados por nosotros y no asumimos responsabilidad sobre su contenido o políticas.</p>
-        </div>
+        <button class="accordion" id="acc6Btn">6. Links to Other Sites</button>
+        <div class="panel"><p id="acc6Txt">This Service may contain links to other sites (such as official entity indicators). If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us and we assume no responsibility for their content or policies.</p></div>
 
-        <button class="accordion">7. Contacto</button>
-        <div class="panel">
-            <p>Si tiene alguna pregunta o sugerencia sobre nuestra Política de Privacidad, no dude en contactarnos a través de los canales proporcionados en la ficha de desarrollador de Google Play.</p>
-        </div>
+        <button class="accordion" id="acc7Btn">7. Contact Us</button>
+        <div class="panel"><p id="acc7Txt">If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us through the developer channels provided on Google Play.</p></div>
 
     </div>
 
     <script>
-        // Lógica para establecer la fecha actual automáticamente
-        const dateElement = document.getElementById('currentDate');
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        dateElement.textContent = new Date().toLocaleDateString('es-ES', options);
+        // --- DICCIONARIO BILINGÜE ---
+        const translations = {
+            en: {
+                pageTitle: "Privacy Policy | DolarGO",
+                langToggle: "ESPAÑOL",
+                lastUpdatedTitle: "Last updated:",
+                introText: "<strong>CIDDRAS</strong> (\"us\", \"we\", or \"our\") operates the <strong>DolarGO</strong> mobile application. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service.",
+                acc1Btn: "1. Information Collection and Use",
+                acc1Txt: "For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.",
+                acc2Btn: "2. Log Data",
+                acc2Txt: "We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.",
+                acc3Btn: "3. Cookies",
+                acc3Txt: "Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. Our app does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.",
+                acc4Btn: "4. Service Providers",
+                acc4Txt: "We may employ third-party companies and individuals due to the following reasons: <br><br> • To facilitate our Service.<br> • To provide the Service on our behalf.<br> • To analyze how our Service is used.",
+                acc5Btn: "5. Security",
+                acc5Txt: "We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable.",
+                acc6Btn: "6. Links to Other Sites",
+                acc6Txt: "This Service may contain links to other sites (such as official entity indicators). If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us and we assume no responsibility for their content or policies.",
+                acc7Btn: "7. Contact Us",
+                acc7Txt: "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us through the developer channels provided on Google Play.",
+                themeBtnDark: "Dark Mode",
+                themeBtnLight: "Light Mode"
+            },
+            es: {
+                pageTitle: "Política de Privacidad | DolarGO",
+                langToggle: "ENGLISH",
+                lastUpdatedTitle: "Última actualización:",
+                introText: "<strong>CIDDRAS</strong> (\"nosotros\", \"nuestro\" o \"la Compañía\") opera la aplicación móvil <strong>DolarGO</strong>. Esta página le informa sobre nuestras políticas con respecto a la recopilación, el uso y la divulgación de datos personales cuando utiliza nuestro Servicio.",
+                acc1Btn: "1. Recopilación y uso de información",
+                acc1Txt: "Para una mejor experiencia al utilizar nuestro Servicio, es posible que le pidamos que nos proporcione cierta información de identificación personal. La información que solicitemos se mantendrá en su dispositivo y nosotros no la recopilaremos de ninguna manera.",
+                acc2Btn: "2. Datos de registro (Log Data)",
+                acc2Txt: "Queremos informarle que cada vez que utiliza nuestro Servicio, en caso de un error en la aplicación, recopilamos datos e información en su teléfono llamados Datos de registro. Estos pueden incluir información como la dirección de protocolo de Internet (“IP”) de su dispositivo, el nombre del dispositivo, la versión del sistema operativo, la configuración de la aplicación y la hora/fecha de su uso.",
+                acc3Btn: "3. Cookies",
+                acc3Txt: "Las cookies son archivos con una pequeña cantidad de datos que se utilizan comúnmente como identificadores únicos anónimos. Nuestra aplicación no utiliza estas “cookies” de forma explícita. Sin embargo, la aplicación puede utilizar código de terceros y bibliotecas que utilizan “cookies” para recopilar información y mejorar sus servicios.",
+                acc4Btn: "4. Proveedores de servicios",
+                acc4Txt: "Podemos emplear a terceras empresas e individuos por las siguientes razones: <br><br> • Para facilitar nuestro Servicio.<br> • Para prestar el Servicio en nuestro nombre.<br> • Para analizar cómo se utiliza nuestro Servicio.",
+                acc5Btn: "5. Seguridad",
+                acc5Txt: "Valoramos su confianza al proporcionarnos su información personal, por lo que nos esforzamos por utilizar medios comercialmente aceptables para protegerla. Pero recuerde que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro y confiable.",
+                acc6Btn: "6. Enlaces a otros sitios",
+                acc6Txt: "Este Servicio puede contener enlaces a otros sitios (como indicadores de entes oficiales). Si hace clic en un enlace de un tercero, será dirigido a ese sitio. Tenga en cuenta que estos sitios externos no son operados por nosotros y no asumimos responsabilidad sobre su contenido o políticas.",
+                acc7Btn: "7. Contacto",
+                acc7Txt: "Si tiene alguna pregunta o sugerencia sobre nuestra Política de Privacidad, no dude en contactarnos a través de los canales proporcionados en la ficha de desarrollador de Google Play.",
+                themeBtnDark: "Modo Oscuro",
+                themeBtnLight: "Modo Claro"
+            }
+        };
 
-        // Lógica para el modo oscuro/claro
+        let currentLang = 'en'; // Inglés por defecto
+        
+        // --- FECHA AUTOMÁTICA ---
+        function updateDateLabel() {
+            const dateElement = document.getElementById('currentDate');
+            const locale = currentLang === 'en' ? 'en-US' : 'es-ES';
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            dateElement.textContent = new Date().toLocaleDateString(locale, options);
+        }
+
+        // --- CAMBIO DE IDIOMA ---
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            document.documentElement.lang = currentLang;
+            
+            // Actualizar textos según el diccionario
+            const dict = translations[currentLang];
+            document.title = dict.pageTitle;
+            
+            const keysToUpdate = [
+                'pageTitle', 'langToggle', 'lastUpdatedTitle', 'introText', 
+                'acc1Btn', 'acc1Txt', 'acc2Btn', 'acc2Txt', 'acc3Btn', 'acc3Txt', 
+                'acc4Btn', 'acc4Txt', 'acc5Btn', 'acc5Txt', 'acc6Btn', 'acc6Txt', 'acc7Btn', 'acc7Txt'
+            ];
+
+            keysToUpdate.forEach(key => {
+                document.getElementById(key).innerHTML = dict[key];
+            });
+
+            updateThemeButtonText();
+            updateDateLabel();
+        }
+
+        // --- MODO OSCURO ---
         function toggleTheme() {
             const body = document.body;
-            const toggleBtn = document.getElementById('themeToggle');
-            
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
-                toggleBtn.textContent = 'Modo Oscuro';
             } else {
                 body.setAttribute('data-theme', 'dark');
-                toggleBtn.textContent = 'Modo Claro';
+            }
+            updateThemeButtonText();
+        }
+
+        function updateThemeButtonText() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('themeToggle');
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            
+            if (currentLang === 'en') {
+                toggleBtn.textContent = isDark ? translations.en.themeBtnLight : translations.en.themeBtnDark;
+            } else {
+                toggleBtn.textContent = isDark ? translations.es.themeBtnLight : translations.es.themeBtnDark;
             }
         }
 
-        // Lógica para el Acordeón
+        // --- ACORDEÓN ---
         const accordions = document.getElementsByClassName("accordion");
-        
         for (let i = 0; i < accordions.length; i++) {
             accordions[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 const panel = this.nextElementSibling;
-                
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
                     panel.classList.remove("show");
@@ -227,6 +301,9 @@
                 } 
             });
         }
+
+        // Inicializar fecha al cargar
+        updateDateLabel();
     </script>
 </body>
 </html>
